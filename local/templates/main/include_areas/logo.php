@@ -1,0 +1,1 @@
+<a href="index.html"><img src="<?=SITE_TEMPLATE_PATH;?>/images/logo2.png" alt=" " /><h1>CLOTHES</h1></a>
