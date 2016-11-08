@@ -71,42 +71,24 @@ Loc::loadMessages(__FILE__);?>
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                    <ul class="nav navbar-nav ">
-                        <li class=" active"><a href="index.html" class="hyper "><span>Главная</span></a></li>
-                        <li class="dropdown ">
-                            <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Каталог <b class="caret"></b></span></a>
-                            <ul class="dropdown-menu multi">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <ul class="multi-column-dropdown">
 
-                                            <li><a href="women.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Женская одежда</a></li>
+                <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
+	"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"MAX_LEVEL" => "2",	// Уровень вложенности меню
+		"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+			0 => "",
+		),
+		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"ROOT_MENU_TYPE" => "left",	// Тип меню для первого уровня
+		"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+	),
+	false
+);?>
 
-                                            <li><a href="jewellery.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Аксессуары</a></li>
-                                        </ul>
-
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <ul class="multi-column-dropdown">
-                                            <li><a href="men.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Мужская одежда</a></li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-4 w3l">
-                                        <a href="women.html"><img src="<?=SITE_TEMPLATE_PATH;?>/images/menu1.jpg" class="img-responsive" alt=""></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="hyper"><span>Новости</span></a>
-                        </li>
-                        <li><a href="about.html" class="hyper"><span>О магазине</span></a></li>
-                        <li><a href="contact.html" class="hyper"><span>Контакты</span></a></li>
-                    </ul>
-                </div>
             </nav>
         </div>
         <script>

@@ -29,13 +29,13 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 
 <h2>Тренды сезона</h2>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section",
-	".default",
+	"bitrix:catalog.section", 
+	".default", 
 	array(
 		"IBLOCK_TYPE_ID" => "catalog",
-		"IBLOCK_ID" => "2",
+		"IBLOCK_ID" => "5",
 		"BASKET_URL" => "/personal/cart/",
-		"COMPONENT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
 		"IBLOCK_TYPE" => "catalog",
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
 		"SECTION_CODE" => "",
@@ -50,11 +50,11 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 		"FILTER_NAME" => "arrFilter",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"SHOW_ALL_WO_SECTION" => "Y",
-		"HIDE_NOT_AVAILABLE" => "N",
-		"PAGE_ELEMENT_COUNT" => "12",
+		"HIDE_NOT_AVAILABLE" => "Y",
+		"PAGE_ELEMENT_COUNT" => "10",
 		"LINE_ELEMENT_COUNT" => "3",
 		"PROPERTY_CODE" => array(
-			0 => "",
+			0 => "CATEGORY_ITEM",
 			1 => "",
 		),
 		"OFFERS_FIELD_CODE" => array(
@@ -62,26 +62,22 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 			1 => "",
 		),
 		"OFFERS_PROPERTY_CODE" => array(
-			0 => "COLOR_REF",
-			1 => "SIZES_SHOES",
-			2 => "SIZES_CLOTHES",
+			0 => "",
+			1 => "COLOR_REF",
+			2 => "SIZES_SHOES",
 			3 => "",
 		),
-		"OFFERS_SORT_FIELD" => "sort",
-		"OFFERS_SORT_ORDER" => "desc",
-		"OFFERS_SORT_FIELD2" => "id",
-		"OFFERS_SORT_ORDER2" => "desc",
+		"OFFERS_SORT_FIELD" => "shows",
+		"OFFERS_SORT_ORDER" => "asc",
+		"OFFERS_SORT_FIELD2" => "shows",
+		"OFFERS_SORT_ORDER2" => "asc",
 		"OFFERS_LIMIT" => "5",
 		"TEMPLATE_THEME" => "site",
-		"PRODUCT_DISPLAY_MODE" => "Y",
-		"ADD_PICT_PROP" => "MORE_PHOTO",
+		"PRODUCT_DISPLAY_MODE" => "N",
+		"ADD_PICT_PROP" => "-",
 		"LABEL_PROP" => "-",
 		"OFFER_ADD_PICT_PROP" => "-",
-		"OFFER_TREE_PROPS" => array(
-			0 => "COLOR_REF",
-			1 => "SIZES_SHOES",
-			2 => "SIZES_CLOTHES",
-		),
+		"OFFER_TREE_PROPS" => "",
 		"PRODUCT_SUBSCRIPTION" => "N",
 		"SHOW_DISCOUNT_PERCENT" => "N",
 		"SHOW_OLD_PRICE" => "Y",
@@ -131,12 +127,9 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 		"PRODUCT_PROPERTIES" => array(
 		),
 		"OFFERS_CART_PROPERTIES" => array(
-			0 => "COLOR_REF",
-			1 => "SIZES_SHOES",
-			2 => "SIZES_CLOTHES",
 		),
 		"ADD_TO_BASKET_ACTION" => "ADD",
-		"PAGER_TEMPLATE" => "round",
+		"PAGER_TEMPLATE" => ".default",
 		"DISPLAY_TOP_PAGER" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"PAGER_TITLE" => "Товары",
@@ -147,7 +140,9 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"SET_STATUS_404" => "N",
 		"SHOW_404" => "N",
-		"MESSAGE_404" => ""
+		"MESSAGE_404" => "",
+		"BACKGROUND_IMAGE" => "-",
+		"DISABLE_INIT_JS_IN_COMPONENT" => "N"
 	),
 	false
 );?>

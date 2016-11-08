@@ -44,21 +44,31 @@
                         )
                     );?>
                 </li>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+
+                <a href="#"> <span class="soc_icon"><img src="<?=SITE_TEMPLATE_PATH;?>/images/icon-twitter.png"></span></a>
+                <a href="#"><span class="soc_icon"><img src="<?=SITE_TEMPLATE_PATH;?>/images/dribbble.png"></span></a>
+                <a href="#"><span class="soc_icon"><img src="<?=SITE_TEMPLATE_PATH;?>/images/icon-facebook.png"></span></a>
+                <a href="#"><span class="soc_icon"><img src="<?=SITE_TEMPLATE_PATH;?>/images/icon-linkedin.png"></span></a>
             </ul>
         </div>
-        <div class="col-md-3 footer-grids fgd2">
-            <h4>Информация</h4>
-            <ul>
-                <li><a href="contact.html">Контакты</a></li>
-                <li><a href="icons.html">Web Icons</a></li>
-                <li><a href="typography.html">Typography</a></li>
-                <li><a href="faq.html">FAQ's</a></li>
-            </ul>
-        </div>
+
+        <?$APPLICATION->IncludeComponent("bitrix:menu", "bottom_menu", Array(
+	"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+		"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		"DELAY" => "N",	// Откладывать выполнение шаблона меню
+		"MAX_LEVEL" => "1",	// Уровень вложенности меню
+		"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+			0 => "",
+		),
+		"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		"MENU_CACHE_TYPE" => "A",	// Тип кеширования
+		"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		"ROOT_MENU_TYPE" => "left",	// Тип меню для первого уровня
+		"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+	),
+	false
+);?>
+
         <div class="col-md-3 footer-grids fgd3">
             <h4>Магазин</h4>
             <ul>
