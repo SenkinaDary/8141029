@@ -101,7 +101,16 @@ class TradeManager
                 'UF_PERIOD' => new
                 \Bitrix\Main\Type\DateTime($period . ' 00:00:00')
             );
-            $result = TradeEmployeeTable::add($arValue);
+
+            $Trade = self::GetTradeEmployeeValue($Trade, $idEmployee, $period);
+                if (isset($Trade["ID"]))
+                {
+                    $result = TradeEmployeeTable::update($Trade["ID"], $arValue);
+                }
+                else {
+                    $result = TradeEmployeeTable::add($arValue);
+                }
+
             if (!$result->isSuccess()) {
                 $db->rollbackTransaction();
                 return false;
